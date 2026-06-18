@@ -1,15 +1,512 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Icon from '@/components/ui/icon';
+import { Button } from '@/components/ui/button';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
+const HERO_BG =
+  'https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/files/f2bdf611-a805-4751-ba8a-640c3c644282.jpg';
+
+const CTA = ({
+  children,
+  variant = 'gold',
+  className = '',
+}: {
+  children: React.ReactNode;
+  variant?: 'gold' | 'outline';
+  className?: string;
+}) => {
+  if (variant === 'outline') {
+    return (
+      <Button
+        className={`h-auto rounded-full border-2 border-gold bg-transparent px-8 py-4 text-base font-semibold text-emerald hover:bg-gold hover:text-emerald-deep transition-all ${className}`}
+      >
+        {children}
+      </Button>
+    );
+  }
+  return (
+    <Button
+      className={`h-auto rounded-full gold-gradient px-8 py-4 text-base font-semibold text-emerald-deep shadow-lg shadow-gold/30 hover:scale-105 transition-transform ${className}`}
+    >
+      {children}
+    </Button>
+  );
+};
+
+const SectionTitle = ({
+  eyebrow,
+  title,
+  light = false,
+}: {
+  eyebrow: string;
+  title: string;
+  light?: boolean;
+}) => (
+  <div className="mb-12 text-center">
+    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gold">
+      {eyebrow}
+    </p>
+    <h2
+      className={`font-display text-4xl font-semibold leading-tight md:text-5xl ${
+        light ? 'text-white' : 'text-emerald-deep'
+      }`}
+    >
+      {title}
+    </h2>
+  </div>
+);
 
 const Index = () => {
+  const tariffs = [
+    {
+      name: 'Групповое сопровождение',
+      duration: '6 недель',
+      price: '20 600 ₽',
+      highlight: false,
+      features: [
+        'Работа в поддерживающей группе',
+        'Корректировка 1 сценария',
+        'Разбор повторяющихся паттернов',
+        'Обратная связь автора',
+      ],
+    },
+    {
+      name: 'Индивидуальный тариф',
+      duration: '6 недель',
+      price: '24 800 ₽',
+      highlight: true,
+      features: [
+        'Личное сопровождение 1-на-1',
+        'Корректировка 1 сценария',
+        'Глубокая персональная работа',
+        'Гибкий график и темп',
+      ],
+    },
+    {
+      name: 'Глубокое сопровождение',
+      duration: '10 недель',
+      price: '30 500 ₽',
+      highlight: false,
+      features: [
+        'Индивидуальный формат',
+        'Корректировка 2 сценариев',
+        'Максимальная глубина проработки',
+        'Полное закрепление результата',
+      ],
+    },
+  ];
+
+  const reviews = [
+    {
+      name: 'Анна',
+      text: 'Я годами начинала и бросала. Здесь впервые дошла до конца и поняла, что меня держало. Перестала контролировать всё вокруг — и стало легче дышать.',
+      photo: 'https://i.pravatar.cc/120?img=47',
+    },
+    {
+      name: 'Дмитрий',
+      text: 'Сценарий «я недостаточно хорош» был со мной всю жизнь. После сопровождения я наконец вышел на новую работу, о которой боялся даже мечтать.',
+      photo: 'https://i.pravatar.cc/120?img=12',
+    },
+    {
+      name: 'Марина',
+      text: 'Не быстрая магия, а честная работа. Зато результат настоящий — я перестала сливаться и довела свой проект до денег.',
+      photo: 'https://i.pravatar.cc/120?img=32',
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-block bg-[#FF6637] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap">
-        Подождите 5 минут, Юра создает первую версию проекта с нуля
-      </span>
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      {/* HERO */}
+      <section className="relative flex min-h-screen items-center overflow-hidden">
+        <img
+          src={HERO_BG}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-deep/90 via-emerald-deep/70 to-emerald-deep/40" />
+        <div className="container relative z-10 py-24">
+          <div className="max-w-3xl animate-fade-up">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-emerald-deep/40 px-5 py-2 text-sm font-medium text-gold-soft backdrop-blur">
+              <Icon name="Sparkles" size={16} />
+              Программа сопровождения
+            </span>
+            <h1 className="font-display text-5xl font-semibold leading-[1.05] text-white md:text-7xl">
+              Перепиши свой <span className="gold-text-gradient">сценарий</span>{' '}
+              — выйди в новую жизнь
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 md:text-xl">
+              Для тех, кто постоянно начинает и сливается, боится проявляться и
+              сомневается в себе. Вместе мы находим повторяющийся сценарий,
+              который удерживает вас на месте — и переписываем его в новую
+              внутреннюю опору.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <CTA>Хочу участвовать</CTA>
+              <CTA
+                variant="outline"
+                className="!text-white hover:!text-emerald-deep"
+              >
+                Узнать подробнее
+              </CTA>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* КОМУ ПОДОЙДЁТ */}
+      <section className="container py-24">
+        <SectionTitle eyebrow="Узнайте себя" title="Кому подойдёт программа" />
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              icon: 'RefreshCw',
+              title: 'Повторяющиеся сценарии',
+              text: 'Вы замечаете, что одни и те же ситуации в отношениях, работе и деньгах повторяются снова и снова — будто по кругу.',
+            },
+            {
+              icon: 'ShieldAlert',
+              title: 'Контроль и недоверие себе',
+              text: 'Чрезмерный контроль, тревога и привычка всё держать в руках выматывают. Расслабиться и довериться — почти невозможно.',
+            },
+            {
+              icon: 'EyeOff',
+              title: 'Страх проявляться',
+              text: 'Вы боитесь заявить о себе, начинаете дело и сливаетесь. Внутри живёт ощущение «я недостаточно хорош(а)».',
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="hover-lift rounded-3xl border border-border bg-card p-8"
+            >
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl gold-gradient text-emerald-deep">
+                <Icon name={item.icon} size={26} />
+              </div>
+              <h3 className="mb-3 font-display text-2xl font-semibold text-emerald-deep">
+                {item.title}
+              </h3>
+              <p className="leading-relaxed text-muted-foreground">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mx-auto mt-12 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
+          Старые подходы — «просто соберись» и «мотивируй себя» — не работают,
+          потому что дело не в силе воли. Дело в сценарии, который записан глубже.
+        </p>
+      </section>
+
+      {/* РЕЗУЛЬТАТ */}
+      <section className="relative overflow-hidden bg-emerald-deep py-24">
+        <div className="container relative z-10">
+          <SectionTitle
+            eyebrow="Что изменится"
+            title="Результат, который вы увидите"
+            light
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              'Вы перестаёте бросать начатое на полпути и доводите дело до реального результата',
+              'Появляется устойчивая внутренняя опора — вместо тревоги и постоянного контроля',
+              'Вы понимаете, какой сценарий вами управлял, и больше не действуете на автомате',
+              'Открывается путь к реализации, деньгам и отношениям без страха проявляться',
+            ].map((text) => (
+              <div
+                key={text}
+                className="flex gap-4 rounded-2xl border border-gold/20 bg-white/5 p-6 backdrop-blur"
+              >
+                <Icon
+                  name="Check"
+                  size={24}
+                  className="mt-1 shrink-0 text-gold-soft"
+                />
+                <p className="text-lg leading-relaxed text-white/90">{text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <CTA>Хочу такой результат</CTA>
+          </div>
+        </div>
+      </section>
+
+      {/* КАК РАБОТАЕТ */}
+      <section className="container py-24">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <SectionTitle
+              eyebrow="Формат"
+              title="Это работа вместе, а не курс в записи"
+            />
+            <div className="space-y-6 text-left">
+              {[
+                {
+                  icon: 'Users',
+                  title: 'Живое сопровождение',
+                  text: 'Вы идёте не в одиночку по урокам, а в связке с автором, который ведёт вас шаг за шагом.',
+                },
+                {
+                  icon: 'CalendarClock',
+                  title: '6 или 10 недель',
+                  text: 'Достаточно времени, чтобы не просто понять, а закрепить новый сценарий в реальной жизни.',
+                },
+                {
+                  icon: 'Target',
+                  title: 'Точечная корректировка',
+                  text: 'Мы разбираем конкретный сценарий и переписываем его — индивидуально под вашу ситуацию.',
+                },
+              ].map((s) => (
+                <div key={s.title} className="flex gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-emerald">
+                    <Icon name={s.icon} size={22} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-emerald-deep">
+                      {s.title}
+                    </h3>
+                    <p className="text-muted-foreground">{s.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-3xl gold-gradient p-1">
+            <div className="rounded-[22px] bg-card p-10">
+              <Icon name="Quote" size={40} className="mb-4 text-gold" />
+              <p className="font-display text-2xl font-medium italic leading-snug text-emerald-deep">
+                «Дело не в том, чтобы стать другим человеком. Дело в том, чтобы
+                перестать жить по чужому сценарию и написать свой».
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ПРОГРАММА */}
+      <section className="bg-secondary/40 py-24">
+        <div className="container">
+          <SectionTitle eyebrow="Наполнение" title="Что мы разберём внутри" />
+          <Accordion type="single" collapsible className="mx-auto max-w-3xl">
+            {[
+              {
+                q: 'Диагностика сценария',
+                a: 'Находим повторяющийся сценарий, который управляет вашими решениями, отношениями и деньгами. Делаем невидимое — видимым.',
+              },
+              {
+                q: 'Корни и точки опоры',
+                a: 'Разбираемся, откуда сценарий взялся и на чём держится. Это снимает чувство вины и даёт ясность.',
+              },
+              {
+                q: 'Работа с контролем и страхом проявляться',
+                a: 'Учимся отпускать чрезмерный контроль и выходить в действие без привычного «слива» на полпути.',
+              },
+              {
+                q: 'Новая внутренняя опора',
+                a: 'Формируем устойчивое состояние, на которое можно опираться в реальной жизни — а не только на эмоциональном подъёме.',
+              },
+              {
+                q: 'Переход в реализацию',
+                a: 'Переводим новое состояние в конкретные шаги: реализация, деньги, отношения, новая жизнь.',
+              },
+            ].map((item) => (
+              <AccordionItem
+                key={item.q}
+                value={item.q}
+                className="mb-3 rounded-2xl border border-border bg-card px-6"
+              >
+                <AccordionTrigger className="text-left font-display text-xl font-semibold text-emerald-deep hover:no-underline">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* ОБ АВТОРЕ */}
+      <section className="container py-24">
+        <SectionTitle eyebrow="Почему со мной" title="Об авторе" />
+        <div className="grid items-center gap-12 md:grid-cols-5">
+          <div className="md:col-span-2">
+            <div className="relative mx-auto max-w-sm">
+              <div className="absolute -inset-3 rounded-[2rem] gold-gradient opacity-40 blur-xl" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-4 border-gold/30 bg-secondary">
+                <div className="flex h-full w-full items-center justify-center text-muted-foreground">
+                  <div className="text-center">
+                    <Icon name="ImagePlus" size={40} className="mx-auto mb-2" />
+                    <p className="text-sm">Ваше фото</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-3">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Я провожу людей через самый честный путь — от повторяющихся
+              сценариев к новой внутренней опоре. Моя работа выросла не из
+              теории, а из личной истории, в том числе истории моего сына,
+              которая многое изменила в моём подходе.
+            </p>
+            <div className="mt-8 grid grid-cols-3 gap-6">
+              {[
+                { num: '100+', label: 'человек в сопровождении' },
+                { num: '6–10', label: 'недель глубокой работы' },
+                { num: '1-на-1', label: 'личное внимание' },
+              ].map((s) => (
+                <div key={s.label}>
+                  <p className="font-display text-4xl font-semibold text-gold">
+                    {s.num}
+                  </p>
+                  <p className="text-sm text-muted-foreground">{s.label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 leading-relaxed text-muted-foreground">
+              Мой подход — без давления и обещаний «лёгкого и быстрого». Только
+              взрослая, честная работа для думающих людей, которые готовы выйти в
+              реализацию.
+            </p>
+          </div>
+        </div>
+
+        {/* ОТЗЫВЫ */}
+        <div className="mt-20">
+          <h3 className="mb-10 text-center font-display text-3xl font-semibold text-emerald-deep">
+            Результаты тех, кто уже прошёл
+          </h3>
+          <div className="grid gap-6 md:grid-cols-3">
+            {reviews.map((r) => (
+              <div
+                key={r.name}
+                className="hover-lift rounded-3xl border border-border bg-card p-8"
+              >
+                <div className="mb-4 flex gap-1 text-gold">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Icon key={i} name="Star" size={18} />
+                  ))}
+                </div>
+                <p className="mb-6 leading-relaxed text-foreground/80">
+                  «{r.text}»
+                </p>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={r.photo}
+                    alt={r.name}
+                    className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/40"
+                  />
+                  <span className="font-semibold text-emerald-deep">
+                    {r.name}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ТАРИФЫ */}
+      <section className="bg-emerald-deep py-24">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Форматы участия"
+            title="Выберите свой формат"
+            light
+          />
+          <div className="grid items-stretch gap-6 md:grid-cols-3">
+            {tariffs.map((t) => (
+              <div
+                key={t.name}
+                className={`relative flex flex-col rounded-3xl p-8 ${
+                  t.highlight
+                    ? 'gold-gradient text-emerald-deep shadow-2xl shadow-gold/20 md:-translate-y-4'
+                    : 'border border-gold/20 bg-white/5 text-white backdrop-blur'
+                }`}
+              >
+                {t.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-deep px-4 py-1 text-xs font-semibold uppercase tracking-wider text-gold-soft">
+                    Популярный
+                  </span>
+                )}
+                <h3 className="font-display text-2xl font-semibold">{t.name}</h3>
+                <p
+                  className={`mt-1 text-sm ${
+                    t.highlight ? 'text-emerald-deep/70' : 'text-white/60'
+                  }`}
+                >
+                  {t.duration} сопровождения
+                </p>
+                <p className="my-6 font-display text-4xl font-bold">{t.price}</p>
+                <ul className="mb-8 space-y-3">
+                  {t.features.map((f) => (
+                    <li key={f} className="flex gap-2 text-sm">
+                      <Icon
+                        name="Check"
+                        size={18}
+                        className={`mt-0.5 shrink-0 ${
+                          t.highlight ? 'text-emerald-deep' : 'text-gold-soft'
+                        }`}
+                      />
+                      <span className={t.highlight ? '' : 'text-white/85'}>
+                        {f}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  className={`mt-auto h-auto rounded-full py-4 text-base font-semibold transition-transform hover:scale-105 ${
+                    t.highlight
+                      ? 'bg-emerald-deep text-gold-soft hover:bg-emerald-deep/90'
+                      : 'gold-gradient text-emerald-deep'
+                  }`}
+                >
+                  Оплатить
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ФИНАЛ */}
+      <section className="relative overflow-hidden py-28">
+        <img
+          src={HERO_BG}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-secondary/90" />
+        <div className="container relative z-10 text-center">
+          <h2 className="mx-auto max-w-3xl font-display text-4xl font-semibold leading-tight text-emerald-deep md:text-6xl">
+            Если вы устали начинать заново — это ваш момент
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Эта программа для взрослых, думающих людей, которые готовы перестать
+            жить по старому сценарию и наконец выйти в реализацию, деньги и новую
+            жизнь. Без давления — просто сделайте первый шаг.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <CTA>Записаться</CTA>
+            <CTA variant="outline">Узнать подробнее</CTA>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-emerald-deep py-10 text-center text-white/50">
+        <p className="font-display text-2xl font-semibold text-white">
+          Перепиши свой сценарий
+        </p>
+        <p className="mt-2 text-sm">
+          Новая внутренняя опора · {new Date().getFullYear()}
+        </p>
+      </footer>
     </div>
   );
 };
