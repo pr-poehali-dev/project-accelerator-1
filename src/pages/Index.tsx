@@ -63,39 +63,57 @@ const SectionTitle = ({
 const Index = () => {
   const tariffs = [
     {
-      name: 'Групповое сопровождение',
+      name: 'Основа',
+      tag: 'Группа 5–8 человек',
       duration: '6 недель',
       price: '20 600 ₽',
       highlight: false,
+      forWhom:
+        'Для тех, кто хочет разобраться в своих сценариях и менять состояние в поддерживающем окружении',
       features: [
-        'Работа в поддерживающей группе',
-        'Корректировка 1 сценария',
-        'Разбор повторяющихся паттернов',
-        'Обратная связь автора',
+        'Проработка до 2 ключевых сценариев',
+        '1 диагностический разбор A ⇒ B',
+        'Групповые созвоны 1 раз в неделю (40–60 мин)',
+        'Чат поддержки',
+        'Практики и упражнения',
+        'Домашние задания',
+        'Общая обратная связь',
+        'Рабочая тетрадь к модулям',
       ],
     },
     {
-      name: 'Индивидуальный тариф',
+      name: 'Основа Individual',
+      tag: 'Индивидуально',
       duration: '6 недель',
-      price: '24 800 ₽',
+      price: '24 600 ₽',
       highlight: true,
+      forWhom:
+        'Для тех, кому нужна персональная работа и глубокое сопровождение один на один',
       features: [
-        'Личное сопровождение 1-на-1',
-        'Корректировка 1 сценария',
-        'Глубокая персональная работа',
-        'Гибкий график и темп',
+        'Проработка до 2 сценариев',
+        'Индивидуальные созвоны 1 раз в неделю',
+        'Персональная корректировка сценариев',
+        'Прямой чат с Гульмирой',
+        'Практики и домашние задания',
+        'Поддержка между встречами',
       ],
     },
     {
-      name: 'Глубокое сопровождение',
+      name: 'Глубокое сопровождение VIP',
+      tag: 'Индивидуально',
       duration: '10 недель',
       price: '30 500 ₽',
       highlight: false,
+      forWhom:
+        'Для тех, кто готов к серьёзной трансформации и хочет изменить сразу несколько сфер жизни',
       features: [
-        'Индивидуальный формат',
-        'Корректировка 2 сценариев',
-        'Максимальная глубина проработки',
-        'Полное закрепление результата',
+        'Проработка до 4 сценариев',
+        '2 глубоких диагностических разбора',
+        'Еженедельные индивидуальные созвоны',
+        'Персональная работа с установками',
+        'Аудио и терапевтические техники',
+        'Личная стратегия перехода A ⇒ B',
+        'Бонус: живые обои-напоминания',
       ],
     },
   ];
@@ -132,17 +150,17 @@ const Index = () => {
           <div className="max-w-3xl animate-fade-up">
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-emerald-deep/40 px-5 py-2 text-sm font-medium text-gold-soft backdrop-blur">
               <Icon name="Sparkles" size={16} />
-              Программа сопровождения
+              Программа «Новая внутренняя опора»
             </span>
             <h1 className="font-display text-5xl font-semibold leading-[1.05] text-white md:text-7xl">
               Перепиши свой <span className="gold-text-gradient">сценарий</span>{' '}
-              — выйди в новую жизнь
+              — измени свою реальность
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 md:text-xl">
-              Для тех, кто постоянно начинает и сливается, боится проявляться и
-              сомневается в себе. Вместе мы находим повторяющийся сценарий,
-              который удерживает вас на месте — и переписываем его в новую
-              внутреннюю опору.
+              Помогаю мягко, но глубоко переписать внутренние сценарии, которые
+              мешают отношениям, уверенности, проявленности и доходу. Вы меняете
+              восприятие и реакции — и естественно переходите к проявленности,
+              спокойной уверенности и росту дохода.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <CTA>Хочу участвовать</CTA>
@@ -195,9 +213,80 @@ const Index = () => {
           ))}
         </div>
         <p className="mx-auto mt-12 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
-          Старые подходы — «просто соберись» и «мотивируй себя» — не работают,
-          потому что дело не в силе воли. Дело в сценарии, который записан глубже.
+          Ты не «сломанный человек». Большинство проблем — это сценарии, которые
+          когда-то помогали выживать, но сейчас мешают жить. Их можно изменить —
+          мягко, глубоко и экологично.
         </p>
+      </section>
+
+      {/* ТОЧКА А → Б */}
+      <section className="bg-secondary/40 py-24">
+        <div className="container">
+          <SectionTitle eyebrow="Путь" title="Из точки А — в точку Б" />
+          <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center">
+            <div className="rounded-3xl border border-border bg-card p-8">
+              <span className="mb-5 inline-block rounded-full bg-muted px-4 py-1 text-sm font-semibold text-muted-foreground">
+                Точка А — сейчас
+              </span>
+              <ul className="space-y-3">
+                {[
+                  'Постоянная тревога и неуверенность',
+                  'Внутренний критик и страх ошибок',
+                  'Чувство «я недостаточно хорош(а)»',
+                  'Эмоциональная зависимость',
+                  'Повторяющиеся проблемы в жизни',
+                  'Невозможность спокойно проявляться',
+                ].map((t) => (
+                  <li
+                    key={t}
+                    className="flex gap-3 leading-snug text-muted-foreground"
+                  >
+                    <Icon
+                      name="Minus"
+                      size={18}
+                      className="mt-1 shrink-0 text-muted-foreground/60"
+                    />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full gold-gradient text-emerald-deep shadow-lg shadow-gold/30">
+                <Icon name="ArrowRight" size={28} />
+              </div>
+            </div>
+            <div className="rounded-3xl gold-gradient p-1">
+              <div className="rounded-[22px] bg-card p-8">
+                <span className="mb-5 inline-block rounded-full gold-gradient px-4 py-1 text-sm font-semibold text-emerald-deep">
+                  Точка Б — результат
+                </span>
+                <ul className="space-y-3">
+                  {[
+                    'Внутренняя устойчивость и уверенность',
+                    'Понимание собственных сценариев',
+                    'Новые спокойные реакции',
+                    'Здоровые личные границы',
+                    'Ощущение ценности себя',
+                    'Свобода проявляться и расти в доходе',
+                  ].map((t) => (
+                    <li
+                      key={t}
+                      className="flex gap-3 leading-snug text-emerald-deep"
+                    >
+                      <Icon
+                        name="Check"
+                        size={18}
+                        className="mt-1 shrink-0 text-gold"
+                      />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* РЕЗУЛЬТАТ */}
@@ -293,24 +382,34 @@ const Index = () => {
           <Accordion type="single" collapsible className="mx-auto max-w-3xl">
             {[
               {
-                q: 'Диагностика сценария',
-                a: 'Находим повторяющийся сценарий, который управляет вашими решениями, отношениями и деньгами. Делаем невидимое — видимым.',
+                n: '01',
+                q: 'Диагностика внутренних сценариев',
+                a: 'Какие установки управляют вашей жизнью, почему повторяются одинаковые ситуации, автоматические эмоциональные реакции, скрытые страхи и запреты. Результат: вы видите реальные причины своих состояний.',
               },
               {
-                q: 'Корни и точки опоры',
-                a: 'Разбираемся, откуда сценарий взялся и на чём держится. Это снимает чувство вины и даёт ясность.',
+                n: '02',
+                q: 'Самооценка и внутренняя ценность',
+                a: 'Внутренний критик, синдром «со мной что-то не так», зависимость от мнения окружающих, привычка обесценивать себя. Результат: появляется ощущение ценности себя без подтверждения извне.',
               },
               {
-                q: 'Работа с контролем и страхом проявляться',
-                a: 'Учимся отпускать чрезмерный контроль и выходить в действие без привычного «слива» на полпути.',
+                n: '03',
+                q: 'Тревога и внутреннее напряжение',
+                a: 'Жизнь в постоянном контроле, страх будущего, эмоциональная перегрузка, невозможность расслабиться. Результат: снижается тревожность, появляется внутреннее спокойствие.',
               },
               {
-                q: 'Новая внутренняя опора',
-                a: 'Формируем устойчивое состояние, на которое можно опираться в реальной жизни — а не только на эмоциональном подъёме.',
+                n: '04',
+                q: 'Страх проявленности',
+                a: 'Страх осуждения, страх ошибок, запрет быть заметным. Практика безопасного проявления. Результат: вы свободнее говорите о себе, своих желаниях и целях.',
               },
               {
-                q: 'Переход в реализацию',
-                a: 'Переводим новое состояние в конкретные шаги: реализация, деньги, отношения, новая жизнь.',
+                n: '05',
+                q: 'Отношения и личные границы',
+                a: 'Эмоциональная зависимость, страх потерять отношения, чувство вины, сложности с границами. Навык экологичного «нет». Результат: более спокойные и здоровые отношения.',
+              },
+              {
+                n: '06',
+                q: 'Деньги, реализация и новый сценарий жизни',
+                a: 'Внутренний потолок, страх успеха, чувство недостойности, самосаботаж. Формирование нового жизненного сценария. Результат: внутреннее расширение и готовность к новым результатам.',
               },
             ].map((item) => (
               <AccordionItem
@@ -319,9 +418,14 @@ const Index = () => {
                 className="mb-3 rounded-2xl border border-border bg-card px-6"
               >
                 <AccordionTrigger className="text-left font-display text-xl font-semibold text-emerald-deep hover:no-underline">
-                  {item.q}
+                  <span className="flex items-center gap-4">
+                    <span className="font-display text-2xl text-gold">
+                      {item.n}
+                    </span>
+                    {item.q}
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                <AccordionContent className="pl-12 text-base leading-relaxed text-muted-foreground">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -348,9 +452,15 @@ const Index = () => {
             </div>
           </div>
           <div className="md:col-span-3">
+            <h3 className="mb-2 font-display text-3xl font-semibold text-emerald-deep">
+              Гульмира
+            </h3>
+            <p className="mb-5 text-gold">Автор программы «Новая внутренняя опора»</p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Я провожу людей через самый честный путь — от повторяющихся
-              сценариев к новой внутренней опоре. Моя работа выросла не из
+              Я помогаю переписать внутренние сценарии, которые мешают
+              отношениям, самореализации, уверенности и доходу. Мягко, но глубоко
+              корректирую установки — и человек естественным образом меняет своё
+              восприятие, реакции и саму реальность. Моя работа выросла не из
               теории, а из личной истории, в том числе истории моего сына,
               которая многое изменила в моём подходе.
             </p>
@@ -434,13 +544,22 @@ const Index = () => {
                     Популярный
                   </span>
                 )}
-                <h3 className="font-display text-2xl font-semibold">{t.name}</h3>
-                <p
-                  className={`mt-1 text-sm ${
-                    t.highlight ? 'text-emerald-deep/70' : 'text-white/60'
+                <span
+                  className={`mb-3 inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold ${
+                    t.highlight
+                      ? 'bg-emerald-deep/15 text-emerald-deep'
+                      : 'bg-gold/15 text-gold-soft'
                   }`}
                 >
-                  {t.duration} сопровождения
+                  {t.tag} · {t.duration}
+                </span>
+                <h3 className="font-display text-2xl font-semibold">{t.name}</h3>
+                <p
+                  className={`mt-2 text-sm leading-snug ${
+                    t.highlight ? 'text-emerald-deep/75' : 'text-white/60'
+                  }`}
+                >
+                  {t.forWhom}
                 </p>
                 <p className="my-6 font-display text-4xl font-bold">{t.price}</p>
                 <ul className="mb-8 space-y-3">
