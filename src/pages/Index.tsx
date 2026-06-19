@@ -588,13 +588,14 @@ const Index = () => {
                   ))}
                 </ul>
                 <Button
+                  onClick={() => window.open('https://web.telegram.org/a/#5072108025', '_blank')}
                   className={`mt-auto h-auto rounded-full py-4 text-base font-semibold transition-transform hover:scale-105 ${
                     t.highlight
                       ? 'bg-emerald-deep text-gold-soft hover:bg-emerald-deep/90'
                       : 'gold-gradient text-emerald-deep'
                   }`}
                 >
-                  Оплатить
+                  Забронировать место на курсе
                 </Button>
               </div>
             ))}
