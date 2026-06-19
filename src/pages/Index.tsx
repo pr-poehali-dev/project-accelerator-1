@@ -462,7 +462,7 @@ const Index = () => {
           </div>
           <div className="md:col-span-3">
             <h3 className="mb-2 font-display text-3xl font-semibold text-emerald-deep">
-              Гульмира
+              Гульмира Абу
             </h3>
             <p className="mb-5 text-gold">Автор программы «Новая внутренняя опора»</p>
             <p className="text-lg leading-relaxed text-muted-foreground">
