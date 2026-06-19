@@ -10,18 +10,24 @@ import {
 const HERO_BG =
   'https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/files/f2bdf611-a805-4751-ba8a-640c3c644282.jpg';
 
+const TG_LINK = 'https://t.me/+5072108025';
+
 const CTA = ({
   children,
   variant = 'gold',
   className = '',
+  tg = false,
 }: {
   children: React.ReactNode;
   variant?: 'gold' | 'outline';
   className?: string;
+  tg?: boolean;
 }) => {
+  const handleClick = tg ? () => window.open(TG_LINK, '_blank') : undefined;
   if (variant === 'outline') {
     return (
       <Button
+        onClick={handleClick}
         className={`h-auto rounded-full border-2 border-gold bg-transparent px-8 py-4 text-base font-semibold text-emerald hover:bg-gold hover:text-emerald-deep transition-all ${className}`}
       >
         {children}
@@ -30,6 +36,7 @@ const CTA = ({
   }
   return (
     <Button
+      onClick={handleClick}
       className={`h-auto rounded-full gold-gradient px-8 py-4 text-base font-semibold text-emerald-deep shadow-lg shadow-gold/30 hover:scale-105 transition-transform ${className}`}
     >
       {children}
@@ -163,7 +170,7 @@ const Index = () => {
               спокойной уверенности и росту дохода.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <CTA>Хочу участвовать</CTA>
+              <CTA tg>Хочу участвовать</CTA>
               <CTA
                 variant="outline"
                 className="!text-white hover:!text-emerald-deep"
@@ -318,7 +325,7 @@ const Index = () => {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <CTA>Хочу такой результат</CTA>
+            <CTA tg>Хочу такой результат</CTA>
           </div>
         </div>
       </section>
@@ -611,7 +618,7 @@ const Index = () => {
             жизнь. Без давления — просто сделайте первый шаг.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <CTA>Записаться</CTA>
+            <CTA tg>Записаться</CTA>
             <CTA variant="outline">Узнать подробнее</CTA>
           </div>
         </div>
