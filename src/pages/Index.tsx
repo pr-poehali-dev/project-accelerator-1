@@ -17,13 +17,15 @@ const CTA = ({
   variant = 'gold',
   className = '',
   tg = false,
+  onClick,
 }: {
   children: React.ReactNode;
   variant?: 'gold' | 'outline';
   className?: string;
   tg?: boolean;
+  onClick?: () => void;
 }) => {
-  const handleClick = tg ? () => window.open(TG_LINK, '_blank') : undefined;
+  const handleClick = onClick ?? (tg ? () => window.open(TG_LINK, '_blank') : undefined);
   if (variant === 'outline') {
     return (
       <Button
@@ -174,6 +176,7 @@ const Index = () => {
               <CTA
                 variant="outline"
                 className="!text-white hover:!text-emerald-deep"
+                onClick={() => document.getElementById('for-whom')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Узнать подробнее
               </CTA>
@@ -183,7 +186,7 @@ const Index = () => {
       </section>
 
       {/* КОМУ ПОДОЙДЁТ */}
-      <section className="container py-24">
+      <section id="for-whom" className="container py-24">
         <SectionTitle eyebrow="Узнайте себя" title="Кому подойдёт программа" />
         <div className="grid gap-6 md:grid-cols-3">
           {[
