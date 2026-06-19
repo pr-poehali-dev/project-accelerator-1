@@ -451,13 +451,12 @@ const Index = () => {
           <div className="md:col-span-2">
             <div className="relative mx-auto max-w-sm">
               <div className="absolute -inset-3 rounded-[2rem] gold-gradient opacity-40 blur-xl" />
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-4 border-gold/30 bg-secondary">
-                <div className="flex h-full w-full items-center justify-center text-muted-foreground">
-                  <div className="text-center">
-                    <Icon name="ImagePlus" size={40} className="mx-auto mb-2" />
-                    <p className="text-sm">Ваше фото</p>
-                  </div>
-                </div>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-4 border-gold/30">
+                <img
+                  src="https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/bucket/1aafe90b-6a43-40b2-9da8-8bf3e18cf776.png"
+                  alt="Гульмира — автор программы"
+                  className="h-full w-full object-cover object-top"
+                />
               </div>
             </div>
           </div>
