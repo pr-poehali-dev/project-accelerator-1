@@ -621,7 +621,7 @@ const Index = () => {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <CTA tg>Записаться</CTA>
-            <CTA variant="outline">Узнать подробнее</CTA>
+            <CTA variant="outline" onClick={() => document.getElementById('for-whom')?.scrollIntoView({ behavior: 'smooth' })}>Узнать подробнее</CTA>
           </div>
         </div>
       </section>
