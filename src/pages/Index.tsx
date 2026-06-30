@@ -10,7 +10,7 @@ import {
 const HERO_BG =
   'https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/files/f2bdf611-a805-4751-ba8a-640c3c644282.jpg';
 
-const TG_LINK = 'https://t.me/+5072108025';
+const TG_LINK = 'https://t.me/GUM_GUM8';
 
 const CTA = ({
   children,
