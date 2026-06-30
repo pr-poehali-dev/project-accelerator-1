@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Send booking notification",
+      "method": "POST",
+      "path": "/",
+      "body": {"tariff": "Основа Individual", "price": "24 600 ₽"},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
