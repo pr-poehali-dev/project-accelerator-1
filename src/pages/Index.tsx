@@ -1,73 +1,15 @@
 import Icon from '@/components/ui/icon';
-import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import CTA from '@/components/landing/CTA';
+import SectionTitle from '@/components/landing/SectionTitle';
 
 const HERO_BG =
   'https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/files/f2bdf611-a805-4751-ba8a-640c3c644282.jpg';
-
-const TG_LINK = 'https://t.me/GUM_GUM8';
-
-const CTA = ({
-  children,
-  variant = 'gold',
-  className = '',
-  tg = false,
-  onClick,
-}: {
-  children: React.ReactNode;
-  variant?: 'gold' | 'outline';
-  className?: string;
-  tg?: boolean;
-  onClick?: () => void;
-}) => {
-  const handleClick = onClick ?? (tg ? () => window.open(TG_LINK, '_blank') : undefined);
-  if (variant === 'outline') {
-    return (
-      <Button
-        onClick={handleClick}
-        className={`h-auto rounded-full border-2 border-gold bg-transparent px-8 py-4 text-base font-semibold text-emerald hover:bg-gold hover:text-emerald-deep transition-all ${className}`}
-      >
-        {children}
-      </Button>
-    );
-  }
-  return (
-    <Button
-      onClick={handleClick}
-      className={`h-auto rounded-full gold-gradient px-8 py-4 text-base font-semibold text-emerald-deep shadow-lg shadow-gold/30 hover:scale-105 transition-transform ${className}`}
-    >
-      {children}
-    </Button>
-  );
-};
-
-const SectionTitle = ({
-  eyebrow,
-  title,
-  light = false,
-}: {
-  eyebrow: string;
-  title: string;
-  light?: boolean;
-}) => (
-  <div className="mb-12 text-center">
-    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-gold">
-      {eyebrow}
-    </p>
-    <h2
-      className={`font-display text-4xl font-semibold leading-tight md:text-5xl ${
-        light ? 'text-white' : 'text-emerald-deep'
-      }`}
-    >
-      {title}
-    </h2>
-  </div>
-);
 
 const Index = () => {
   const tariffs = [
