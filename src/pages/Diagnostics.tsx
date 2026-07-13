@@ -5,6 +5,9 @@ import SectionTitle from '@/components/landing/SectionTitle';
 const HERO_BG =
   'https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/files/f2bdf611-a805-4751-ba8a-640c3c644282.jpg';
 
+const AUTHOR_PHOTO =
+  'https://cdn.poehali.dev/projects/e66c6c7d-b465-4059-a952-5c768d48be08/bucket/1aafe90b-6a43-40b2-9da8-8bf3e18cf776.png';
+
 const Diagnostics = () => {
   const findOut = [
     'что сегодня мешает вам двигаться вперед',
@@ -29,7 +32,12 @@ const Diagnostics = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-deep/90 via-emerald-deep/75 to-emerald-deep/50" />
         <div className="container relative z-10 py-24">
-          <div className="mx-auto max-w-3xl animate-fade-up text-center">
+          <div className="mx-auto flex max-w-4xl flex-col items-center animate-fade-up text-center">
+            <img
+              src={AUTHOR_PHOTO}
+              alt="Гульмира — автор программы"
+              className="mb-6 h-28 w-28 rounded-full border-2 border-gold/60 object-cover shadow-lg shadow-gold/20 md:h-36 md:w-36"
+            />
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-emerald-deep/40 px-5 py-2 text-sm font-medium text-gold-soft backdrop-blur">
               <Icon name="Sparkles" size={16} />
               Бесплатная Диагностика
@@ -38,7 +46,7 @@ const Diagnostics = () => {
               Какой результат вы получите на{' '}
               <span className="gold-text-gradient">Бесплатной Диагностике?</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-white/85 md:text-xl">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">
               Мы определим Сценарии, которые работают против ваших интересов, и
               поймём необходимые шаги для качественных изменений в сценариях
               вашей жизни 🤓
