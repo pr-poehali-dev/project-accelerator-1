@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
+import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
