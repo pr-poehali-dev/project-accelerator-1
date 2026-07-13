@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import {
   Accordion,
@@ -568,7 +569,9 @@ const Index = () => {
             жизнь. Без давления — просто сделайте первый шаг.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <CTA tg>Записаться на бесплатную диагностику</CTA>
+            <Link to="/diagnostics">
+              <CTA>Записаться на бесплатную диагностику</CTA>
+            </Link>
             <CTA variant="outline" onClick={() => document.getElementById('for-whom')?.scrollIntoView({ behavior: 'smooth' })}>Узнать подробнее</CTA>
           </div>
         </div>
