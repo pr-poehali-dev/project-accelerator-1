@@ -42,33 +42,40 @@ const Diagnostics = () => {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       {/* HERO */}
-      <section className="relative flex min-h-[70vh] items-center overflow-hidden">
+      <section className="relative overflow-hidden">
         <img
           src={HERO_BG}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-deep/90 via-emerald-deep/75 to-emerald-deep/50" />
-        <div className="container relative z-10 py-24">
-          <div className="mx-auto flex max-w-4xl flex-col items-center animate-fade-up text-center">
-            <img
-              src={AUTHOR_PHOTO}
-              alt="Гульмира — автор программы"
-              className="mb-6 h-28 w-28 rounded-full border-2 border-gold/60 object-cover shadow-lg shadow-gold/20 md:h-36 md:w-36"
-            />
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-emerald-deep/40 px-5 py-2 text-sm font-medium text-gold-soft backdrop-blur">
-              <Icon name="Sparkles" size={16} />
-              Бесплатная Диагностика
-            </span>
-            <h1 className="font-display text-4xl font-semibold leading-[1.1] text-white md:text-6xl">
-              Какой результат вы получите на{' '}
-              <span className="gold-text-gradient">Бесплатной Диагностике?</span>
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">
-              Мы определим Сценарии, которые работают против ваших интересов, и
-              поймём необходимые шаги для качественных изменений в сценариях
-              вашей жизни 🤓
-            </p>
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-deep/95 via-emerald-deep/90 to-emerald-deep/80" />
+        <div className="container relative z-10 py-20 md:py-28">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 animate-fade-up md:grid-cols-2">
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="absolute -inset-3 rounded-[2rem] gold-gradient opacity-40 blur-xl" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-4 border-gold/30">
+                <img
+                  src={AUTHOR_PHOTO}
+                  alt="Гульмира — автор программы"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+            </div>
+            <div className="text-center md:text-left">
+              <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-emerald-deep/40 px-5 py-2 text-sm font-medium text-gold-soft backdrop-blur">
+                <Icon name="Sparkles" size={16} />
+                Бесплатная Диагностика
+              </span>
+              <h1 className="font-display text-4xl font-semibold leading-[1.1] text-white md:text-5xl">
+                Какой результат вы получите на{' '}
+                <span className="gold-text-gradient">Бесплатной Диагностике?</span>
+              </h1>
+              <p className="mt-6 text-lg leading-relaxed text-white/85 md:text-xl">
+                Мы определим Сценарии, которые работают против ваших интересов, и
+                поймём необходимые шаги для качественных изменений в сценариях
+                вашей жизни 🤓
+              </p>
+            </div>
           </div>
         </div>
       </section>
