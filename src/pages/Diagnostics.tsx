@@ -21,6 +21,24 @@ const Diagnostics = () => {
     'первые шаги, которые помогут начать менять ситуацию уже после встречи',
   ];
 
+  const reviews = [
+    {
+      name: 'Анна',
+      text: 'Шла на диагностику просто из любопытства, а вышла — будто выдохнула впервые за долгое время. Гульмира так бережно помогла увидеть то, что я сама себе боялась признать.',
+      photo: 'https://i.pravatar.cc/120?img=47',
+    },
+    {
+      name: 'Дмитрий',
+      text: 'Не ожидал, что за один разговор можно так ясно увидеть свой сценарий. Ушёл с конкретным пониманием, куда двигаться — и главное, без чувства вины за прошлое.',
+      photo: 'https://i.pravatar.cc/120?img=12',
+    },
+    {
+      name: 'Марина',
+      text: 'Спасибо огромное за тепло и честность на встрече. Никакого давления, только искренний интерес помочь. Впервые почувствовала, что меня по-настоящему услышали.',
+      photo: 'https://i.pravatar.cc/120?img=32',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       {/* HERO */}
@@ -92,6 +110,38 @@ const Diagnostics = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ОТЗЫВЫ */}
+      <section className="container py-24">
+        <SectionTitle eyebrow="От чистого сердца" title="Что говорят те, кто был на диагностике" />
+        <div className="grid gap-6 md:grid-cols-3">
+          {reviews.map((r) => (
+            <div
+              key={r.name}
+              className="hover-lift rounded-3xl border border-border bg-card p-8"
+            >
+              <div className="mb-4 flex gap-1 text-gold">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Icon key={i} name="Star" size={18} />
+                ))}
+              </div>
+              <p className="mb-6 leading-relaxed text-foreground/80">
+                «{r.text}»
+              </p>
+              <div className="flex items-center gap-3">
+                <img
+                  src={r.photo}
+                  alt={r.name}
+                  className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/40"
+                />
+                <span className="font-semibold text-emerald-deep">
+                  {r.name}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
