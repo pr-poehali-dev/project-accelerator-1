@@ -536,7 +536,7 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/diagnostics">
+                <a href="https://t.me/GUM_GUM8" target="_blank" rel="noopener noreferrer">
                   <Button
                     className={`mt-auto h-auto w-full rounded-full py-4 text-base font-semibold transition-transform hover:scale-105 ${
                       t.highlight
@@ -546,7 +546,7 @@ const Index = () => {
                   >
                     Бесплатная диагностика
                   </Button>
-                </Link>
+                </a>
                 <p
                   className={`mt-4 text-xs leading-relaxed ${
                     t.highlight ? 'text-emerald-deep/70' : 'text-white/60'
@@ -591,9 +591,9 @@ const Index = () => {
             жизнь. Без давления — просто сделайте первый шаг.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/diagnostics">
+            <a href="https://t.me/GUM_GUM8" target="_blank" rel="noopener noreferrer">
               <CTA>Записаться на бесплатную диагностику</CTA>
-            </Link>
+            </a>
             <CTA variant="outline" onClick={() => document.getElementById('for-whom')?.scrollIntoView({ behavior: 'smooth' })}>Узнать подробнее</CTA>
           </div>
         </div>
