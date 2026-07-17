@@ -547,6 +547,26 @@ const Index = () => {
                     Бесплатная диагностика
                   </Button>
                 </Link>
+                <p
+                  className={`mt-4 text-xs leading-relaxed ${
+                    t.highlight ? 'text-emerald-deep/70' : 'text-white/60'
+                  }`}
+                >
+                  Для того, чтобы понять, насколько актуален для вас курс, и
+                  какую пользу вы получите на курсе, предлагаю вам
+                  предварительно записаться на бесплатную диагностику. С
+                  описанием процедуры Бесплатной Диагностики вы можете
+                  ознакомиться, пройдя по{' '}
+                  <Link
+                    to="/diagnostics"
+                    className={`underline underline-offset-2 ${
+                      t.highlight ? 'text-emerald-deep' : 'text-gold-soft'
+                    }`}
+                  >
+                    ссылке
+                  </Link>
+                  .
+                </p>
               </div>
             ))}
           </div>
