@@ -544,7 +544,7 @@ const Index = () => {
                         : 'gold-gradient text-emerald-deep'
                     }`}
                   >
-                    Какой результат вы получите на курсе
+                    Бесплатная диагностика
                   </Button>
                 </Link>
               </div>
