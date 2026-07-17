@@ -594,7 +594,9 @@ const Index = () => {
             <a href="https://t.me/GUM_GUM8" target="_blank" rel="noopener noreferrer">
               <CTA>Записаться на бесплатную диагностику</CTA>
             </a>
-            <CTA variant="outline" onClick={() => document.getElementById('for-whom')?.scrollIntoView({ behavior: 'smooth' })}>Узнать подробнее</CTA>
+            <Link to="/diagnostics">
+              <CTA variant="outline">Узнать подробнее</CTA>
+            </Link>
           </div>
         </div>
       </section>
