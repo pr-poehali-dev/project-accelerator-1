@@ -536,16 +536,17 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  onClick={() => window.open('https://t.me/Gumilead_bot', '_blank')}
-                  className={`mt-auto h-auto rounded-full py-4 text-base font-semibold transition-transform hover:scale-105 ${
-                    t.highlight
-                      ? 'bg-emerald-deep text-gold-soft hover:bg-emerald-deep/90'
-                      : 'gold-gradient text-emerald-deep'
-                  }`}
-                >
-                  Забронировать место на курсе
-                </Button>
+                <Link to="/diagnostics">
+                  <Button
+                    className={`mt-auto h-auto w-full rounded-full py-4 text-base font-semibold transition-transform hover:scale-105 ${
+                      t.highlight
+                        ? 'bg-emerald-deep text-gold-soft hover:bg-emerald-deep/90'
+                        : 'gold-gradient text-emerald-deep'
+                    }`}
+                  >
+                    Какой результат вы получите на курсе
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
