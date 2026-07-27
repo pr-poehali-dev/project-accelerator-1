@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -121,14 +120,17 @@ const Index = () => {
               спокойной уверенности и росту дохода.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <CTA tg>Хочу участвовать</CTA>
-              <CTA
-                variant="outline"
-                className="!text-white hover:!text-emerald-deep"
-                onClick={() => document.getElementById('for-whom')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Узнать подробнее
-              </CTA>
+              <a href="https://project-accelerator-1--preview.poehali.dev/diagnostics" target="_blank" rel="noopener noreferrer">
+                <CTA>Хочу участвовать</CTA>
+              </a>
+              <a href="https://project-accelerator-1--preview.poehali.dev/diagnostics" target="_blank" rel="noopener noreferrer">
+                <CTA
+                  variant="outline"
+                  className="!text-white hover:!text-emerald-deep"
+                >
+                  Узнать подробнее
+                </CTA>
+              </a>
             </div>
           </div>
         </div>
@@ -277,7 +279,9 @@ const Index = () => {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <CTA tg>Хочу такой результат</CTA>
+            <a href="https://project-accelerator-1--preview.poehali.dev/diagnostics" target="_blank" rel="noopener noreferrer">
+              <CTA>Хочу такой результат</CTA>
+            </a>
           </div>
         </div>
       </section>
@@ -536,7 +540,7 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <a href="https://t.me/GUM_GUM8" target="_blank" rel="noopener noreferrer">
+                <a href="https://project-accelerator-1--preview.poehali.dev/diagnostics" target="_blank" rel="noopener noreferrer">
                   <Button
                     className={`mt-auto h-auto w-full rounded-full py-4 text-base font-semibold transition-transform hover:scale-105 ${
                       t.highlight
@@ -547,26 +551,6 @@ const Index = () => {
                     Бесплатная диагностика
                   </Button>
                 </a>
-                <p
-                  className={`mt-4 text-xs leading-relaxed ${
-                    t.highlight ? 'text-emerald-deep/70' : 'text-white/60'
-                  }`}
-                >
-                  Для того, чтобы понять, насколько актуален для вас курс, и
-                  какую пользу вы получите на курсе, предлагаю вам
-                  предварительно записаться на бесплатную диагностику. С
-                  описанием процедуры Бесплатной Диагностики вы можете
-                  ознакомиться, пройдя по{' '}
-                  <Link
-                    to="/diagnostics"
-                    className={`underline underline-offset-2 ${
-                      t.highlight ? 'text-emerald-deep' : 'text-gold-soft'
-                    }`}
-                  >
-                    ссылке
-                  </Link>
-                  .
-                </p>
               </div>
             ))}
           </div>
@@ -591,12 +575,12 @@ const Index = () => {
             жизнь. Без давления — просто сделайте первый шаг.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a href="https://t.me/GUM_GUM8" target="_blank" rel="noopener noreferrer">
+            <a href="https://project-accelerator-1--preview.poehali.dev/diagnostics" target="_blank" rel="noopener noreferrer">
               <CTA>Записаться на бесплатную диагностику</CTA>
             </a>
-            <Link to="/diagnostics">
+            <a href="https://project-accelerator-1--preview.poehali.dev/diagnostics" target="_blank" rel="noopener noreferrer">
               <CTA variant="outline">Узнать подробнее</CTA>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
