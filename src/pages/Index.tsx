@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -445,6 +446,13 @@ const Index = () => {
               взрослая, честная работа для думающих людей, которые готовы выйти в
               реализацию.
             </p>
+            <Link
+              to="/son-story"
+              className="mt-6 inline-flex items-center gap-2 font-semibold text-gold hover:text-gold-soft transition-colors"
+            >
+              Читать историю моего сына
+              <Icon name="ArrowRight" size={18} />
+            </Link>
           </div>
         </div>
 
